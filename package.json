@@ -1,10 +1,11 @@
 {
-  "name": "exit-simulator",
-  "version": "0.0.1",
+  "name": "@ttoys/funding-simulator",
+  "version": "0.0.4",
   "private": true,
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "build:lib": "vite build --config vite.config.lib.ts",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -33,7 +34,7 @@
     "tailwindcss": "^3.3.6",
     "tslib": "^2.4.1",
     "typescript": "^5.0.0",
-    "vite": "^5.0.0"
+    "vite": "^5.4.21"
   },
   "type": "module",
   "dependencies": {
@@ -46,5 +47,12 @@
     "svelte-tippy": "^1.3.2",
     "tailwind-merge": "^2.1.0",
     "tippy.js": "^6.3.7"
-  }
+  },
+  "exports": {
+    ".": "./dist-lib/funding-simulator.js",
+    "./styles.css": "./dist-lib/style.css"
+  },
+  "svelte": "./src/lib/FundingSimulator.svelte",
+  "main": "./dist-lib/funding-simulator.js",
+  "files": ["dist-lib"]
 }
